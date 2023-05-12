@@ -19,7 +19,7 @@
 ##### Clone this repo, and we'll call the directory that you cloned as ${OPENCV_ROOT}.
 
 #### Create a new conda environment (optional)
-`conda create -n your_env_name python=x.x`
+`conda create -n {your_env_name} python={x.x}`
 
 #### Install opencv-python, mediapipe
 `pip install opencv-python mediapipe`  
