@@ -120,9 +120,13 @@ def detect():
                     gesture_str = h_gesture(angle_list)
                     cv2.putText(frame,gesture_str,(0,100),0,1.3,(0,0,255),3)
         cv2.imshow('MediaPipe Hands', frame)
-        if cv2.waitKey(1) & 0xFF == 27:
+        key = cv2.waitKey(50)
+        if key == ord('q'):  # press q to exit
             break
     cap.release()
 
 if __name__ == '__main__':
     detect()
+
+# 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+# 本文链接：https://blog.csdn.net/weixin_45930948/article/details/115444916

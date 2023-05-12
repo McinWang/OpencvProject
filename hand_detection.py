@@ -13,8 +13,7 @@ cap = cv2.VideoCapture(0)
 while True:
     ret,frame = cap.read()
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    # 因为摄像头是镜像的，所以将摄像头水平翻转
-    # 不是镜像的可以不翻转
+    # flipping the frame
     frame= cv2.flip(frame,1)
     results = hands.process(frame)
     frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
@@ -24,10 +23,11 @@ while True:
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             print('hand_landmarks:',hand_landmarks)
-            # 关键点可视化
+            # visualize the landmarks
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
     cv2.imshow('MediaPipe Hands', frame)
-    if cv2.waitKey(1) & 0xFF == 27:
+    key = cv2.waitKey(50)
+    if key  == ord('q'):  #press q to exit
         break
 cap.release()
