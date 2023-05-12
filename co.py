@@ -1,3 +1,0 @@
-'''
-Gauss filtering method
-'''
