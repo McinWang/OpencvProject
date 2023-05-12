@@ -85,6 +85,9 @@ def h_gesture(angle_list):
             gesture_str = "eight"
         elif (angle_list[0]<thr_angle_s)  and (angle_list[1]>thr_angle) and (angle_list[2]>thr_angle) and (angle_list[3]>thr_angle) and (angle_list[4]>thr_angle):
             gesture_str = "thumbUp"
+        elif (angle_list[0]>thr_angle)  and (angle_list[1]>thr_angle) and (angle_list[2]<thr_angle_s) and (angle_list[3]>thr_angle) and (angle_list[4]>thr_angle):
+            gesture_str = "**"
+
 
     return gesture_str
 
